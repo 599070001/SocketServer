@@ -14,12 +14,12 @@ type message struct {
 ```
 #  step1
 join
-
+```
 {"From":"slave","To":"","Group":"房间1","Action":"join","Msg":"","Role":"slave"}
-
+```
 # step2
 chat
-
+```
 {"From":"slave","To":"master","Group":"房间1","Action":"chat","Msg":"{}","Role":"slave"}
-
+```
 
