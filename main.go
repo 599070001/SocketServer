@@ -31,7 +31,6 @@ type message struct {
 }
 
 func main() {
-	fmt.Println(strconv.ParseInt("11123", 10, 64))
 	initServer()
 }
 
@@ -41,7 +40,7 @@ func initServer() {
 	listerner, err := net.ListenTCP("tcp", addr)
 	checkError(err)
 	defer listerner.Close()
-
+	fmt.Println("Socket Server Start")
 	for {
 		client, err := listerner.Accept()
 		if err != nil {
@@ -85,8 +84,6 @@ func handleConn(conn net.Conn, index int64) {
 		receive := string(buffer[:n])
 		//使用换行解决消息粘包
 		msgsArr := strings.Split(receive, "\r\n")
-		fmt.Println(receive)
-		fmt.Println(msgsArr)
 		for _, msg := range msgsArr {
 			if msg == "" {
 				continue
