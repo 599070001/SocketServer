@@ -2,7 +2,7 @@
 golang socket server
 
 # 消息结构体
-
+```
 type message struct {
 	From   string //`slave/master`
 	To     string //`slave/master/allslave`
@@ -11,7 +11,7 @@ type message struct {
 	Msg    string //`json`
 	Role   string //`slave/master/system`
 }
-
+```
 #  step1
 join
 
@@ -19,6 +19,7 @@ join
 
 # step2
 chat
+
 {"From":"slave","To":"master","Group":"房间1","Action":"chat","Msg":"{}","Role":"slave"}
 
 
